@@ -10,4 +10,3 @@ This project is used for collecting room temperature and humidity from a DHT11 s
 * [pyenv virtualenv plugin](https://github.com/pyenv/pyenv-virtualenv)
 * [Python project structure for datascience](https://drivendata.github.io/cookiecutter-data-science/)
 * [Another python datascience structure](https://towardsdatascience.com/structure-your-data-science-projects-6c6c8653c16a)
-* [Django sample project](https://docs.djangoproject.com/en/2.2/intro/tutorial01/#creating-a-project)
