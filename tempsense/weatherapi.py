@@ -4,8 +4,8 @@ from modelclass import TempSenseModel
 import logging
 
 class WeatherAPI:
-#    https://api.openweathermap.org/data/2.5/weather?lat=35.12&lon=-89.94&units=imperial&appid=59a50d2b0a7f529c6700a33b51b1d3d9
-   api_key = '59a50d2b0a7f529c6700a33b51b1d3d9'
+
+   api_key = 'myapikey'
    base_url = "https://api.openweathermap.org/data/2.5/weather?"
    weather_logger = logging.getLogger(__name__)
    weather_logger.setLevel(logging.WARNING)
