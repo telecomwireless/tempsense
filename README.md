@@ -1,5 +1,7 @@
 # tempsense
-This project is used for collecting room temperature and humidity from a DHT11 sensor using raspberry PI and write to a CSV file on the PI file systems.
+This project collects room temperature and humidity from a DHT11 sensor that is wired to a raspberry PI. The data gathered from
+sensor is written to a CSV file with the intention of using it for predicting room temperature and humidity just by giving outside
+temparature and humidity.
 
 
 ### Resources
