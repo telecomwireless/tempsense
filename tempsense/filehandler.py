@@ -5,7 +5,7 @@ from modelclass import TempSenseModel
 import logging
 from weatherapi import WeatherAPI
 from sensordata import ReadSensorData
-import time
+
 
 class FileProcessor:
 
@@ -24,10 +24,11 @@ class FileProcessor:
         self.file_name = file_name
         self.file_path = file_path
         self.rotate_loc = '/mnt/mydisk/temphum/'
-        self.full_file_path = self.file_path+"/"+self.file_name+"-"+str(date.today())+".csv"
+       
 
     def write_to_csv(self, sensor_tuple, weather_tuple):
-            header_write = self.rotate_files()            
+            header_write = self.rotate_files()
+            self.full_file_path = self.file_path+"/"+self.file_name+"-"+str(date.today())+".csv"
             with open(self.full_file_path, mode='a+') as file:
                  writer = csv.DictWriter(file, FileProcessor.fieldname, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                  if header_write or FileProcessor.counter == 0:
@@ -48,5 +49,4 @@ class FileProcessor:
             shutil.move(self.full_file_path, self.rotate_loc)
             FileProcessor.today_date = date.today()
             my_var = True
-            time.sleep(240)
         return my_var
