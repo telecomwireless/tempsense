@@ -5,6 +5,7 @@ from modelclass import TempSenseModel
 import logging
 from weatherapi import WeatherAPI
 from sensordata import ReadSensorData
+import time
 
 class FileProcessor:
 
@@ -47,4 +48,5 @@ class FileProcessor:
             shutil.move(self.full_file_path, self.rotate_loc)
             FileProcessor.today_date = date.today()
             my_var = True
+            time.sleep(240)
         return my_var
