@@ -28,7 +28,7 @@ class FileProcessor:
 
     def write_to_csv(self, sensor_tuple, weather_tuple):
             header_write = self.rotate_files()
-            self.full_file_path = self.file_path+"/"+self.file_name+"-"+str(date.today())+".csv"
+            full_file_path = self.file_path+"/"+self.file_name+"-"+str(date.today())+".csv"
             with open(self.full_file_path, mode='a+') as file:
                  writer = csv.DictWriter(file, FileProcessor.fieldname, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                  if header_write or FileProcessor.counter == 0:
@@ -46,7 +46,7 @@ class FileProcessor:
         ''' This method will move files to the external mount connected to the PI '''
         my_var = False
         if FileProcessor.today_date < date.today():
-            shutil.move(self.full_file_path, self.rotate_loc)
+            shutil.move(self.file_path+"/"+self.file_name+"-"+FileProcessor.today_date+".csv", self.rotate_loc)
             FileProcessor.today_date = date.today()
             my_var = True
         return my_var
